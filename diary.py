@@ -221,8 +221,6 @@ class AdminPanel:
         AdminPanelButtonSave.pack(anchor="nw")
         # |----------------------------Упаковка----------------------------|
         # |----------------------------Расстановка полей ввода----------------------------|
-        lessonsz = [["1", lesson, mark], ["2", lesson, mark], ["3", lesson, mark],
-                   ["4", lesson, mark], ["5", lesson, mark], ["6", lesson, mark]]
         # Понедельник
         labelN = ttk.Label(FrameMondayAdmin, text=" |№|                Lesson                | Mark |")
         label1 = ttk.Label(FrameMondayAdmin,text="   1")
@@ -681,4 +679,5 @@ AdminPanelButton.pack(anchor="nw")
 
 root.minsize(700,1000)
 #root.maxsize(700,800)
+
 root.mainloop()
