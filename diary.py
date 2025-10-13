@@ -12,17 +12,17 @@ LabelDiary = ttk.Label(FrameLabelDiary,text="Diary")
 LabelDiary.pack(anchor="n")
 FrameLabelDiary.pack(anchor="n",  padx=5, pady=5)
 
-BodyFrames = ttk.Frame(borderwidth=1, relief=SOLID, width=400, height=800)
+BodyFrames = ttk.Frame(borderwidth=1, relief=SOLID, width=400, height=700)
 
 LeftContainerFrame = ttk.Frame(BodyFrames, borderwidth=0, relief=SOLID, padding=(10,5))
 RightContainerFrame = ttk.Frame(BodyFrames,borderwidth=0, relief=SOLID, padding=(10,5))
 
-FrameMonday = ttk.Frame(LeftContainerFrame, borderwidth=3, relief=SOLID, padding=(5,5))
-FrameTuesday = ttk.Frame(LeftContainerFrame,borderwidth=3, relief=SOLID, padding=(5,5))
-FrameWednesday = ttk.Frame(LeftContainerFrame,borderwidth=3, relief=SOLID, padding=(5,5))
-FrameThursday = ttk.Frame(RightContainerFrame,borderwidth=3, relief=SOLID, padding=(5,5))
-FrameFriday = ttk.Frame(RightContainerFrame,borderwidth=3, relief=SOLID, padding=(5,5))
-FrameSaturday = ttk.Frame(RightContainerFrame,borderwidth=3, relief=SOLID, padding=(5,5))
+FrameMonday = ttk.Frame(LeftContainerFrame, borderwidth=3, relief=SOLID, height=100)
+FrameTuesday = ttk.Frame(LeftContainerFrame,borderwidth=3, relief=SOLID, height=100)
+FrameWednesday = ttk.Frame(LeftContainerFrame,borderwidth=3, relief=SOLID, height=100)
+FrameThursday = ttk.Frame(RightContainerFrame,borderwidth=3, relief=SOLID,height=100)
+FrameFriday = ttk.Frame(RightContainerFrame,borderwidth=3, relief=SOLID, height=100)
+FrameSaturday = ttk.Frame(RightContainerFrame,borderwidth=3, relief=SOLID, height=100)
 
 FrameTools = ttk.Frame(borderwidth=2, relief=SOLID, width=200, height=150)
 #|----------------------------Фреймы/Контейнеры----------------------------|
@@ -176,7 +176,7 @@ class AdminPanel:
         FrameLabelAdminDiary.pack(anchor="n", padx=5, pady=5)
 
         # |----------------------------Фреймы----------------------------|
-        BodyFramesAdmin = ttk.Frame(master=self.adminroot, borderwidth=1, relief=SOLID, width=400, height=800)
+        BodyFramesAdmin = ttk.Frame(master=self.adminroot, borderwidth=1, relief=SOLID, width=400, height=700)
 
         LeftContainerFrameAdmin = ttk.Frame(BodyFramesAdmin, borderwidth=0, relief=SOLID, padding=(10,5))
         RightContainerFrameAdmin = ttk.Frame(BodyFramesAdmin, borderwidth=0, relief=SOLID, padding=(10,5))
@@ -221,6 +221,8 @@ class AdminPanel:
         AdminPanelButtonSave.pack(anchor="nw")
         # |----------------------------Упаковка----------------------------|
         # |----------------------------Расстановка полей ввода----------------------------|
+        lessonsz = [["1", lesson, mark], ["2", lesson, mark], ["3", lesson, mark],
+                   ["4", lesson, mark], ["5", lesson, mark], ["6", lesson, mark]]
         # Понедельник
         labelN = ttk.Label(FrameMondayAdmin, text=" |№|                Lesson                | Mark |")
         label1 = ttk.Label(FrameMondayAdmin,text="   1")
@@ -252,6 +254,7 @@ class AdminPanel:
         self.entryMonday4 = ttk.Entry(FrameMondayAdmin, width=entryWidth)
         self.entryMonday5 = ttk.Entry(FrameMondayAdmin, width=entryWidth)
         self.entryMonday6 = ttk.Entry(FrameMondayAdmin, width=entryWidth)
+
 
         # |----------------------------Расстановка полей ввода----------------------------|
         # |----------------------------Упаковка----------------------------|
@@ -646,6 +649,7 @@ class AdminPanel:
         for item in TreeSaturday.get_children():
             TreeSaturday.delete(item)
 
+
         for row in lessonsMonday:
             TreeMonday.insert("", "end", values=row)
         TreeMonday.pack(expand=1, anchor="center")
@@ -677,7 +681,6 @@ def OpenAdminPanel():
 AdminPanelButton = ttk.Button(FrameTools,text='Admin panel',width=80, command=OpenAdminPanel)
 AdminPanelButton.pack(anchor="nw")
 
-root.minsize(700,1000)
+root.minsize(700,800)
 #root.maxsize(700,800)
-
 root.mainloop()
