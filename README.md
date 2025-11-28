@@ -7,6 +7,8 @@
 - <img width="705" height="836" alt="image" src="https://github.com/user-attachments/assets/14afc6b8-02f4-4d2b-9c2f-3c76e3677aa5" />
 
 
-- Как установить? `git clone https://github.com/qqkane/SimpleDiary.git`
+- # Как установить?
+- `git clone https://github.com/qqkane/SimpleDiary.git`
 
-- Как запустить? Установите Python 3.12 с официального сайта, перейдите в директорию с данной программой и запустите файл main.py
+- # Как запустить?
+- Установите Python 3.12 с официального сайта, перейдите в директорию с данной программой и запустите файл main.py
